@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Survey</title>
+</head>
+<body>
+    <h1 id="title">InstaCoffee</h1>
+    <p id="description">A survey to determine your next coffee delivery</p>
+    <form action="" id="survey-form">
+        <fieldset>
+            <label for="name" id="name-label">Enter your name:
+                <input type="text" name="name"  id="name" placeholder="Full name" required>
+            </label>
+            <label for="email" id="email-label">Enter your email:
+                <input type="email" id="email" placeholder="Email address" required>
+            </label>
+            <label for="number" id="number-label">Enter your age:
+                <input type="number" id="number" placeholder="Age" min="18" max="122">
+            </label>
+            <label for="dropdown">For who is the coffee delivery
+                <select name="dropdown" id="dropdown">
+                    <option value="1">For myself</option>
+                    <option value="2">Someone i know</option>
+                    <option value="3">An acquaintance of mine/someone else</option>
+                </select>
+            </label>
+        </fieldset>
+        <fieldset>
+            <label for="send-email">
+                <input type="radio" value="yes" name="email-notification" id="send-email"> Keep me notified about future deliveries
+            </label>
+            <label for="dont-send-email">
+                <input type="radio" value="no" name="email-notification" id="dont-send-email"> Dont keep me notified about future deliveries
+            </label>
+        </fieldset>
+        <fieldset>
+            <label for="instant-coffee">
+                <input type="checkbox" value="instant-coffee" id="instant-coffee">Instant coffee
+            </label>
+            <label for="cappuccino">
+                <input type="checkbox" value="cappuccino" id="cappuccino">Cappuccino
+            </label>
+            <label for="mocha">
+                <input type="checkbox" value="mocha" id="mocha">Mocha
+            </label>
+            <label for="comment">Write additional instructions:
+                <textarea name="comment" id="comment" cols="30" rows="5" placeholder="Write considerations or kinds of coffee for your delivery..."></textarea>
+            </label>
+        </fieldset>
+        <input type="submit" name="" id="submit">
+    </form>
+</body>
+</html>

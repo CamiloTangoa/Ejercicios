@@ -1,0 +1,10 @@
+Completado 12:11 AM - 1/8/2023
+
+Notas:
+    Mueve el src que se dio en el paso a paso
+    de todas las etiquetas "img" hacia alt, 
+    con el fin de poner como src las mismas 
+    imagenes pero ubicadas en la carpeta "Imagenes",
+    alt llevara los links originales
+
+    Agrega link correcto de las imagenes

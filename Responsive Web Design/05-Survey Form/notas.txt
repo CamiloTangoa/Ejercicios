@@ -1,0 +1,9 @@
+Completado 1:34 AM - 1/9/2023
+
+Notas:
+    Falta pulir la pagina. lo cual se hace una vez
+    obtenido el certificado para tener conocimientos
+    que me ayuden a posicionar los elementos mejor y
+    presentarlos de forma adecuada. El codigo actual
+    con el cual pase la prueba se mantendra en 
+    una carpeta adjunta
