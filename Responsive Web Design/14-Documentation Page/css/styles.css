@@ -1,0 +1,59 @@
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1rem 0 0.5rem 0;
+}
+
+li {
+    margin-bottom: 0.4rem;
+}
+
+#main-doc {
+    box-sizing: border-box;
+    display: inline;
+    float: right;
+    padding: 0rem 0 0 1rem;
+    width: 80%;
+}
+
+#navbar {
+    float: left;
+    width: 20%;
+}
+
+nav header {
+    font-size: 22px;
+    overflow: auto;
+}
+
+.nav-link {
+    border-left: 0.3rem solid rgb(105, 99, 99);
+    display: block;
+    padding: 0.25rem 0;
+    text-decoration: unset;
+    text-indent: 0.2em;
+}
+
+.nav-link:hover {
+    background-color: rgba(27, 99, 225, 0.347);
+}
+
+pre {
+    background-color: rgba(155, 155, 155, 0.171);
+    padding: 0.6rem 2rem 0 0;
+    width: fit-content;
+}
+
+.text_blue {
+    color: rgb(9, 49, 223);
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        display: none;
+    }
+}

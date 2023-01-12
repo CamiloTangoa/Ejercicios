@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>BEM documentation</title>
+</head>
+<body>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p>
+                Complete & official methodology can be found here: <a href="https://en.bem.info/methodology/quick-start/#introduction">BEM Methodology</a>
+            </p>
+            <p>
+                BEM (Block, Element, Modifier) is a component-based approach to web development.
+                The idea behind it is to divide the user interface into independent blocks. 
+                This makes interface development easy and fast even with a complex UI, 
+                and it allows reuse of existing code without copying and pasting.
+            </p>
+            <code></code>
+        </section>
+        <section class="main-section" id="Block">
+            <header>Block</header>
+            <p>
+                A functionally independent page component that can be reused. In HTML,
+                blocks are represented by the <code>class</code> attribute.
+            </p>
+            <p>
+                Features:
+            </p>
+            <ul>
+                <li>
+                    The block name describes its purpose ("What is it?" — menu or button),
+                    not its state ("What does it look like?" — red or big).
+                </li>
+            </ul>
+            <p>Example</p>
+            <code>   <!--code tags are a requirement for the test so used them to nest the real code, which in this case is the pre tag I use-->
+                <pre>
+                    &lt;!-- Correct. The `error` block is semantically meaningful --&gt;
+                    &lt;div class="error"&gt;&lt;/div&gt;                
+                    &lt;!-- Incorrect. It describes the appearance --&gt;
+                    &lt;div class="red-text"&gt;&lt;/div&gt;
+                </pre>
+            </code>
+            <ul>
+                <li>
+                    The block shouldn't influence its environment, 
+                    meaning you shouldn't set the external geometry (margin) or positioning for the block.
+                </li>
+                <li>
+                    You also shouldn't use CSS tag or ID selectors when using BEM.
+                </li>
+            </ul>
+            <p class="sub-title">Guidelines for using blocks</p>
+            <p>Nesting</p>
+            <ul>
+                <li>
+                    Blocks can be nested in each other.
+                </li>
+                <li>
+                    You can have any number of nesting levels.
+                </li>
+            </ul>
+            <p>Example</p>
+            <code>
+                <pre>
+                    &lt;!-- `header` block --&gt;
+                    &lt;header class="header"&gt;
+                        &lt;!-- Nested `logo` block --&gt;
+                        &lt;div class="logo">&lt;/div&gt;
+
+                        &lt;!-- Nested `search-form` block --&gt;
+                        &lt;form class="search-form"&gt;&lt;/form&gt;
+                    &lt;/header&gt;
+                </pre>
+            </code>
+        </section>
+        <section class="main-section" id="Element">
+            <header>Element</header>
+            <p>
+                A composite part of a block that can't be used separately from it.
+            </p>
+            <p>
+                Features:
+            </p>
+            <ul>
+                <li>
+                    The <span class="text_blue">element name</span> describes its purpose ("What is this?" — item,text, etc.),
+                    not its state ("What type, or what does it liik like?" — red, big, etc.).
+                </li>
+                <li>
+                    The structure of an element's full name is <code>block-name__element-name</code>. The element-name
+                    is seperated from the block name with a double underscore (__).
+                </li>
+            </ul>
+            <p>
+                Example
+            </p>
+            <code>
+                <pre>
+                    &lt;!-- `search-form` block --&gt;
+                    &lt;form class="search-form"&gt;
+                        &lt;!-- `input` element in the `search-form` block --&gt;
+                        &lt;input class="search-form__input"&gt;
+
+                        &lt;!-- `button` element in the `search-form` block --&gt;
+                        &lt;button class="search-form__button">Search&lt;/button&gt;
+                    &lt;/form&gt;
+                </pre>
+            </code>
+        </section>
+        <section class="main-section" id="When_to_create_a_block">
+            <header>When to create a block</header>
+            <p>
+                If a section of code might be reused and it doesnt't depend on other page components being
+                implemented.
+            </p>
+        </section>
+        <section class="main-section" id="When_to_create_an_element">
+            <header>When to create an element</header>
+            <p>
+                If a section of code can't be used separately without the parent entity (the block).
+            </p>
+            <p>
+                The exception is elements that must be divided into smaller parts - subelements - 
+                in order to simplify development. In the BEM methodology, <span class="text_blue">you can't create elements of elements</span>.
+                In a case like this, instead of creating an element, you need to create a service block.
+            </p>
+        </section>
+        <section class="main-section" id="Modifier">
+            <header>
+                Modifier
+            </header>
+            <p>
+                An entity that defines the appearance, state, or behavior of a block or element.
+            </p>
+            <p>
+                Features:
+            </p>
+            <ul>
+                <li>
+                    The modifier name describes its appearance ("What size?" or "Which theme?" and so on - size_s or theme_islands)
+                    , its state ("How does it behave?" or "How does it respond to the user?" - such as directions_left-top).
+                </li>
+                <li>
+                    The modifier name is separated from the bolck or element name by a single undersocre (_).
+                </li>
+            </ul>
+            <p>
+                Example
+            </p>
+            <code>
+                <pre>
+                    &lt;!-- The `search-form` block has the `focused` Boolean modifier --&gt;
+                    &lt;form class="search-form search-form_focused"&gt;
+                        &lt;input class="search-form__input"&gt;
+
+                        &lt;!-- The `button` element has the `disabled` Boolean modifier --&gt;
+                        &lt;button class="search-form__button search-form__button_disabled">Search&lt;/button&gt;
+                    &lt;/form&gt;
+                </pre>
+            </code>
+        </section>
+    </main>
+    <nav id="navbar">
+        <header>BEM Methodology</header>
+        <a href="#Introduction" class="nav-link">Introduction</a>
+        <a href="#Block" class="nav-link">Block</a>
+        <a href="#Element" class="nav-link">Element</a>
+        <a href="#When_to_create_a_block" class="nav-link">When to create a block</a>
+        <a href="#When_to_create_an_element" class="nav-link">When to create an element</a>
+        <a href="#Modifier" class="nav-link">Modifier</a>
+    </nav>
+</body>
+</html>
